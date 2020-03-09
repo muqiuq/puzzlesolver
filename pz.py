@@ -14,7 +14,7 @@ parser.add_argument('--reverse','-r', action='store_true', help="unsolve a solve
 def encode(filename):
     global sqlite_marker
 
-    new_filename = filename + ".bin"
+    new_filename = filename + ".sqlite"
 
     new_file = open(new_filename, "wb")
 
@@ -38,8 +38,8 @@ def encode(filename):
 
 def decode(filename: str):
     global sqlite_marker
-    #new_filename = filename.replace(".bin","",1)
-    new_filename = filename + ".out"
+    new_filename = filename.replace(".sqlite","",1).replace(".out","")
+    new_filename = new_filename + ".out"
 
     new_file = open(new_filename, "wb")
 
